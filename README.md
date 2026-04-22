@@ -136,19 +136,3 @@ The **Leader Key** is set to `Space`.
 | `<leader>th` | Horizontal terminal |
 | `<leader>tv` | Vertical terminal |
 
----
-
-## 🛠️ Errors & Fixes Found
-
-1.  **Duplicate Keybinding**:
-    - **Issue**: `<leader>tt` was mapped to both `ToggleTerm` and `Telescope colorscheme`.
-    - **Fix**: Removed the redundant theme picker shortcut in `keybinds.lua` (Note: Theme picking is still available via `<leader>uC` in Snacks).
-2.  **Typos**:
-    - **Issue**: `.gitignor` was missing an 'e'.
-    - **Fix**: Renamed to `.gitignore`.
-3.  **Mismatched Filenames**:
-    - **Issue**: `neo-tree.lua` actually configured `snacks.nvim`, and `bufferline.lua` configured `heirline.nvim`.
-    - **Fix**: Renamed files to `snacks.lua` and `heirline.lua` respectively to match their contents.
-4.  **Inactive Plugin**:
-    - **Issue**: `rustaceanvim` was commented out despite being the primary Rust tool.
-    - **Fix**: Enabled `rustaceanvim` in `lua/plugins/rustacean.lua`.

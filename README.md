@@ -2,6 +2,17 @@
 
 A modern, highly optimized Neovim configuration tailored for **Rust development**. Built with performance and aesthetics in mind, this setup uses `lazy.nvim` for plugin management and features a rich UI, powerful LSP integrations, and a full debugging suite.
 
+![nvim rust pro](./nvim-rust-pro.png)
+
+## 📋 Requirements
+
+-   **Neovim v0.12+** (v0.12.1 confirmed)
+-   **Git**: For plugin management and git-related snacks.
+-   **Cargo / Rust Toolchain**: For Rust development and utilities.
+-   **C Compiler** (`gcc` or `clang`) & **Make**: Required for building some plugins like `fzf-native`.
+-   **Ripgrep** (`rg`): For blazing fast project searching.
+-   **Nerd Font**: Highly recommended for icons (e.g., JetBrainsMono Nerd Font).
+
 ---
 
 ## 🚀 Features

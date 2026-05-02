@@ -2,6 +2,8 @@ vim.opt.number = true
 vim.opt.cursorline = true
 vim.opt.relativenumber = false
 vim.opt.shiftwidth = 4
+-- vim.cmd.colorscheme("habanax") -- ("randomnhue") 
+
 vim.opt.runtimepath:append(vim.fn.stdpath("data") .. "/site")
 
 vim.opt.mouse = "a"
@@ -18,3 +20,12 @@ vim.opt.fillchars = {
 	fold = " ",
 	foldsep = " ",
 }
+
+vim.opt.wrap = false
+vim.opt.scrolloff = 10
+-- vim.opt.sidescrolliff = 10
+vim.opt.incsearch = true
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.colorcolumn = "100"
+vim.opt.signcolumn = "yes"

@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = ","
+vim.g.maplocalleader = " "
+
+
 
 vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 
@@ -11,8 +13,8 @@ vim.keymap.set("n", "<leader>cd", vim.cmd.Ex)
 -- vim.keymap.set("n", "<leader>h", ":NvimTreeToggleHidden<CR>", { desc = "Toggle Hidden Files" })
 
 -- Move between buffers
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
-vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
+--vim.keymap.set("n", "<Tab>", ":bnext<CR>", { desc = "Next buffer" })
+--vim.keymap.set("n", "<S-Tab>", ":bprevious<CR>", { desc = "Previous buffer" })
 
 -- Close current buffer
 vim.keymap.set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close buffer" })
@@ -54,5 +56,12 @@ vim.keymap.set("n", "<leader>nm", "<cmd>Noice history<CR>", { desc = "Message Hi
 vim.keymap.set("n", "<leader>nn", "<cmd>Noice last<CR>", { desc = "Last Message" })
 
 vim.keymap.set("n", "<Esc>", function()
-  vim.cmd("nohlsearch")
+	vim.cmd("nohlsearch")
 end, { desc = "Clear search highlight" })
+
+
+-- uncomment  nvim >=0.12
+-- vim.keymap.set("n", "<A-Down>", ":m .+1<CR>==", { desc = { "Move line down" } })
+-- vim.keymap.set("n", "<A-Up>", ":m .-2<CR>==", { desc = { "Move line up" } })
+-- vim.keymap.set("v", "<A-Down>", ":m '>+1<CR>gv=gv", { desc = { "Move selection down" } })
+-- vim.keymap.set("v", "<A-Up>", ":m '>-2<CR>gv=gv", { desc = { "Move selection up" } })

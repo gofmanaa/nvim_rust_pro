@@ -78,14 +78,14 @@ return {
 						procMacro = {
 							enable = true,
 							ignored = {
-								["async-trait"] = { "async_trait" },
+								-- ["async-trait"] = { "async_trait" },
 								["napi-derive"] = { "napi" },
 								["async-recursion"] = { "async_recursion" },
 							},
 						},
 						inlayHints = {
 							enable = true,
-							onlyCurrentLine = false, -- show all lines
+							onlyCurrentLine = true, -- show all lines
 							typeHints = { enable = true },
 							parameterHints = { enable = true },
 							chainingHints = { enable = true },
@@ -120,8 +120,8 @@ return {
 				local opts = { buffer = args.buf }
 				map("n", "gd", vim.lsp.buf.definition, vim.tbl_extend("force", opts, { desc = "Go to definition" }))
 				map("n", "K", vim.lsp.buf.hover, vim.tbl_extend("force", opts, { desc = "Hover" }))
-				map("n", "<leader>lr", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename" }))
-				map("n", "<leader>la", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
+				map("n", "<leader>cr", vim.lsp.buf.rename, vim.tbl_extend("force", opts, { desc = "Rename" }))
+				map("n", "<leader>ca", vim.lsp.buf.code_action, vim.tbl_extend("force", opts, { desc = "Code Action" }))
 				map(
 					"n",
 					"<leader>dn",
@@ -145,20 +145,20 @@ return {
 		})
 
 		-- helper: run cmd in a bottom terminal split
-		local function cargo(cmd)
-			return function()
-				vim.cmd("botright 15split") -- open horizontal split at bottom, 15 lines tall
-				vim.cmd("terminal " .. cmd) -- run the command in terminal
-				vim.cmd("startinsert") -- go into terminal mode so output streams live
-			end
-		end
+		-- local function cargo(cmd)
+		-- 	return function()
+		-- 		vim.cmd("botright 15split") -- open horizontal split at bottom, 15 lines tall
+		-- 		vim.cmd("terminal " .. cmd) -- run the command in terminal
+		-- 		vim.cmd("startinsert") -- go into terminal mode so output streams live
+		-- 	end
+		-- end
 
 		-- CARGO COMMANDS
-		local map = vim.keymap.set
-		map("n", "<leader>cb", cargo("cargo build"), { desc = "Cargo Build" })
-		map("n", "<leader>cc", cargo("cargo check"), { desc = "Cargo Check" })
-		map("n", "<leader>cl", cargo("cargo clippy"), { desc = "Cargo Clippy" })
-		map("n", "<leader>ct", cargo("cargo test"), { desc = "Cargo Test" })
-		map("n", "<leader>cr", cargo("cargo run"), { desc = "Cargo Run" })
+		-- local map = vim.keymap.set
+		-- map("n", "<leader>cb", cargo("cargo build"), { desc = "Cargo Build" })
+		-- map("n", "<leader>cc", cargo("cargo check"), { desc = "Cargo Check" })
+		-- map("n", "<leader>cl", cargo("cargo clippy"), { desc = "Cargo Clippy" })
+		-- map("n", "<leader>ct", cargo("cargo test"), { desc = "Cargo Test" })
+		-- map("n", "<leader>cr", cargo("cargo run"), { desc = "Cargo Run" })
 	end,
 }
